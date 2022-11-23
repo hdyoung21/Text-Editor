@@ -1,0 +1,42 @@
+{
+  "name": "jate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "heroku prebuild": "cd client && npm install --dev",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "client": "cd client && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/runtime": "^7.20.1",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.2",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
+    "if-env": "^1.0.4",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.5.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
