@@ -33,8 +33,8 @@ module.exports = () => {
         description: 'Offline text editor',
         background_color: '#7EB4E2',
         theme_color: '#7EB4E2',
-        start_url: './',
-        publicPath: './',
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
